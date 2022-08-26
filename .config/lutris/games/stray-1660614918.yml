@@ -1,0 +1,5 @@
+game:
+  exe: /mnt/hdd/Games/Stray/Hk_project/Binaries/Win64/Stray-Win64-Shipping.exe
+system:
+  prefix_command: mangohud
+wine: {}

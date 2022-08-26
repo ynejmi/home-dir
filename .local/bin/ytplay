@@ -1,0 +1,12 @@
+#!/bin/sh
+
+query=$(printf '%s' "$*" | tr ' ' '+' )
+echo $query
+vid=$(curl -s "https://vid.puffyan.us/search?q=$query" | grep -Eo "watch\?v=.{11}" | head -n 1)
+echo $vid
+if [ -z $vid ]
+then
+	echo no vid
+	exit
+fi
+mpv "https://www.youtube.com/$vid"

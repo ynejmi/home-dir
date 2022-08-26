@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Dependencies:
+# convert wal xdotool xwallpaper 
+
+sh_info () {
+	# printf "%s\n" "$1" >&2
+	notify-send "set_wallpaper" "$1"
+	# [ -n "$2" ] && exit "$2"
+}
+
+wall_dir=~/pix/wall
+
+if [ -z "$1" ]; then
+  wall="$(find "$wall_dir" -type f -name "*.jpg" -o -name "*.png" | shuf -n1)"
+else
+  wall="$1"
+fi
+# sh_info $wall 
+xwallpaper --maximize $wall
+wal -c
+wal -i $wall
+xdotool key super+F5
+

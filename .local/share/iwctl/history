@@ -1,0 +1,13 @@
+station wlan0 connect SSID5G
+station wlan0 connect-hidden SSID5G
+station wlan0 connect WHITE
+list
+station wlan0 connect-hidden SSID5G
+list
+list devices
+device list 
+station list 
+station wlan0 scan 
+station wlan0 get-hidden-access-points 
+station wlan0 get-networks 
+station wlan0 show 
