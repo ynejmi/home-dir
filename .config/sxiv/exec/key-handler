@@ -2,7 +2,7 @@
 
 rename () {
 	new_name=: | dmenu -p "rename: "
-	echo $new_name
+	
 }
 
 while read file

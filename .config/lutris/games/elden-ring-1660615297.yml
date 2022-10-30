@@ -1,7 +1,0 @@
-game:
-  exe: /home/apex/Games/ELDEN RING v.1.06 (2022)/Elden Ring/Game/eldenring.exe
-system: {}
-wine:
-  battleye: false
-  eac: false
-  version: lutris-ge-lol-7.14-1-x86_64

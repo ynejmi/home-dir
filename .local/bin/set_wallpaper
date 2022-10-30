@@ -3,11 +3,11 @@
 # Dependencies:
 # convert wal xdotool xwallpaper 
 
-sh_info () {
-	# printf "%s\n" "$1" >&2
-	notify-send "set_wallpaper" "$1"
-	# [ -n "$2" ] && exit "$2"
-}
+# sh_info () {
+# 	# printf "%s\n" "$1" >&2
+# 	notify-send "set_wallpaper" "$1"
+# 	# [ -n "$2" ] && exit "$2"
+# }
 
 wall_dir=~/pix/wall
 

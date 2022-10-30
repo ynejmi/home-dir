@@ -1,6 +1,0 @@
-system:
-  env:
-    DXVK_ASYNC: '1'
-  mangohud: false
-wine:
-  version: lutris-fshack-7.2-x86_64

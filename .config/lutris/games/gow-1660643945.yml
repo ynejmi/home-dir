@@ -1,5 +1,0 @@
-game:
-  exe: /mnt/hdd/GodOfWar/GoW.exe
-system: {}
-wine:
-  version: lutris-fshack-7.2-x86_64
