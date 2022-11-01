@@ -30,7 +30,7 @@ sudo pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-xsetroot xorg-xb
 
 sudo rm /bin/sh
 sudo ln -s dash /bin/sh
-sudo echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 
 
 #sudo pacman -Syu --needed --noconfirm firefox code thunar
@@ -76,13 +76,13 @@ cp -r ~/home-dir/.config/shell ~/.config/
 
 ln -s ~/.config/x11/xinitrc ~/.xinitrc
 ln -s ~/.config/shell/profile ~/.zprofile
-export ZSH="$HOME/.config/zsh/oh-my-zsh"
-echo  $ZSH
-
-rm -Rf $ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended --keep-zshrc"
-rm ~/.shell.pre-oh-my-zsh
-rm ~/.zshrc* ~/.zsh_history
+# export ZSH="$HOME/.config/zsh/oh-my-zsh"
+# echo  $ZSH
+# ls -la $ZSH
+# rm -Rf $ZSH
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended --keep-zshrc"
+# rm ~/.shell.pre-oh-my-zsh
+rm ~/.zshrc* ~/.zsh_history ~/.bash
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
 
 echo "done"
