@@ -46,7 +46,8 @@ sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-ke
 
 # Yay setup
 git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -fsri --noconfirm --needed
+cd yay && makepkg -si --noconfirm --needed
+cd
 
 sudo pacman -Syu --noconfirm --needed libxft-bgra
 
@@ -86,7 +87,7 @@ rm ~/.shell.pre-oh-my-zsh
 rm ~/.zshrc* ~/.zsh_history ~/.bash*
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
 
-chsh -s $USER /bin/zsh
+chsh -s /bin/zsh $USER
 
 echo "Congrats, now reboot"
 sleep 4
