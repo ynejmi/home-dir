@@ -9,6 +9,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XAUTHORITY=/tmp/Xauthority
 export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$XDG_CONFIG_HOME/shell/histfile"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export PATH=$PATH:$HOME/.local/bin
 
 exec startx
