@@ -61,9 +61,9 @@ sudo cp -r ~/home-dir/etc/* /etc
 sudo rm -Rf /etc/X11/xorg.conf.d
 sudo mv /etc/xorg.conf.d /etc/X11
 
-# .local // later
+# .local 
 
-cp -r ~/home-dir/.local/src ~/.local/
+cp -r ~/home-dir/.local/* ~/.local/
 
 sudo make clean install -C ~/.local/src/suckless/st
 sudo make clean install -C ~/.local/src/suckless/dwm
