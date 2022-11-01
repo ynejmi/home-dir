@@ -13,4 +13,7 @@ export HISTFILE="$XDG_CONFIG_HOME/shell/histfile"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export PATH=$PATH:$HOME/.local/bin
 
-exec startx
+# open one instance of x ? idk
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
