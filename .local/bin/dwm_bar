@@ -1,5 +1,13 @@
 #!/bin/env sh
 
+# {
+#     "workbench.colorTheme": "Nord Deep",
+#     "explorer.confirmDelete": false,
+#     "editor.minimap.enabled": false,
+#     "editor.fontFamily": "'JetBrains Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', 'Font Awesome 6 Free Solid'",
+#     "editor.fontLigatures": true
+# }
+
 # INIT
 printf "$$" > ~/.cache/pidofbar
 sec=0
