@@ -15,6 +15,7 @@ mkdir ~/.local
 mkdir ~/.config
 
 
+# todo: link root .local
 
 # Nice headstart // temp
 #git clone https://github.com/bugswriter/arch-linux-magic
@@ -49,8 +50,6 @@ cd yay && makepkg -fsri --noconfirm --needed
 
 sudo pacman -Syu --noconfirm --needed libxft-bgra
 
-
-
 # Personal setup
 #git clone https://github.com/ynejmi/home-dir
 
@@ -75,7 +74,6 @@ cp -r ~/home-dir/.config/x11 ~/.config/
 cp -r ~/home-dir/.config/shell ~/.config/
 
 
-# todo: need to chsh - link root
 
 ln -s ~/.config/x11/xinitrc ~/.xinitrc
 ln -s ~/.config/shell/profile ~/.zprofile
@@ -85,10 +83,15 @@ ls -la $ZSH
 rm -Rf $ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended --keep-zshrc"
 rm ~/.shell.pre-oh-my-zsh
-rm ~/.zshrc* ~/.zsh_history ~/.bash
+rm ~/.zshrc* ~/.zsh_history ~/.bash*
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
 
-echo "done"
+chsh -s $USER /bin/zsh
+
+echo "Congrats, now reboot"
+sleep 4
+
+exec zsh
 
 #~/home-dir/my-arch-linux-magic/part2.sh
 
