@@ -10,6 +10,8 @@
 
 # Making sure deps exist
 sudo pacman -Syu --needed --noconfirm zsh git curl base-devel sed
+mkdir ~/.local
+mkdir ~/.config
 
 
 
