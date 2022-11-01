@@ -15,7 +15,9 @@ mkdir ~/.local
 mkdir ~/.config
 
 
-# todo: link root .local
+# todo:   - link root 
+#         - .local
+#         - src / bins in separate repos
 
 # Nice headstart // temp
 #git clone https://github.com/bugswriter/arch-linux-magic
