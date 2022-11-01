@@ -44,7 +44,7 @@ sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-ke
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -fsri --noconfirm --needed
 
-sudo pacman -Syu libxft-bgra
+sudo pacman -Syu --noconfirm --needed libxft-bgra
 
 
 
