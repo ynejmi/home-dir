@@ -13,6 +13,8 @@ export HISTFILE="$XDG_CONFIG_HOME/shell/histfile"
 export ZSH_COMPDUMP=$ZDOTDIR/cache/.zcompdump-$HOST
 export PATH=$PATH:$HOME/.local/bin
 
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 # open one instance of x ? idk
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx

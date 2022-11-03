@@ -4,15 +4,15 @@ rename () {
 	new_name=: | dmenu -p "rename: "
 	
 }
-
+#wip
 while read file
 do
   case "$1" in
-    "w") set_wallpaper $file ;;
-    "d") rm -Rfv $file ;;
-    "f") cp $file ~/pix/wall/$file ;;
-    "r") rename;;
-    "t") notify-send 'testing' $file ;;
+    # "w") set_wallpaper $file ;;
+    # "d") rm -Rfv $file ;;
+    # "f") cp $file ~/pix/wall/$file ;;
+    # "r") rename;;
+    # "t") notify-send 'testing' $file ;;
   esac 
 done
 

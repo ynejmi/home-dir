@@ -1,5 +1,9 @@
 #!/bin/env sh
 
+################################
+# for vscode symbols implement #
+################################
+
 # {
 #     "workbench.colorTheme": "Nord Deep",
 #     "explorer.confirmDelete": false,
@@ -7,6 +11,10 @@
 #     "editor.fontFamily": "'JetBrains Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', 'Font Awesome 6 Free Solid'",
 #     "editor.fontLigatures": true
 # }
+
+################################
+# /sys/class for hardware data #
+################################
 
 # INIT
 printf "$$" > ~/.cache/pidofbar
@@ -22,8 +30,8 @@ update_time () {
 
 update_bat () { 
 	# you might need to change the path depending on your device
-	read -r bat_status </sys/class/power_supply/BAT0/status
-	read -r bat_capacity </sys/class/power_supply/BAT0/capacity
+	read -r bat_status < /sys/class/power_supply/BAT0/status
+	read -r bat_capacity < /sys/class/power_supply/BAT0/capacity
 	if [ "$bat_status" = "Charging" ]; then
 		bat_status=""
 	elif [ "$bat_capacity" -gt 80 ]; then

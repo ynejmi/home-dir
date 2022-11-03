@@ -32,6 +32,7 @@
 #include <sys/wait.h>
 #include <X11/cursorfont.h>
 #include <X11/keysym.h>
+#include <X11/XF86keysym.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xproto.h>
@@ -1034,7 +1035,7 @@ grabbuttons(Client *c, int focused)
 						buttons[i].mask | modifiers[j],
 						c->win, False, BUTTONMASK,
 						GrabModeAsync, GrabModeSync, None, None);
-	}
+	}	
 }
 
 void
@@ -1055,10 +1056,14 @@ grabkeys(void)
 	}
 }
 
+
 void
 incnmaster(const Arg *arg)
 {
+
+	fprintf(stderr, "arg->i: %i\n", arg->i);
 	selmon->nmaster = MAX(selmon->nmaster + arg->i, 0);
+	fprintf(stderr, "selmon->nmaster: %i\n", selmon->nmaster);
 	arrange(selmon);
 }
 
