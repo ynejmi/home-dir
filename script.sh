@@ -17,7 +17,7 @@ sudo pacman -Syu --needed --noconfirm zsh git curl base-devel sed
 sudo rm -Rf ~/.local ~/.config
 mkdir ~/.local
 mkdir ~/.config
-
+mkdir -p ~/.cache/xinit/
 mkdir -p /mnt/hdd
 #sudo sh -c 'echo "#/dev/sda2" >> /etc/fstab'
 #sudo sh -c 'echo "UUID=6CBEAA21BEA9E3B4                           /mnt/hdd        ntfs           rw      0 2" >> /etc/fstab'
