@@ -25,7 +25,7 @@ mkdir -p /mnt/hdd
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-sudo pacman -S --noconfirm --needed \
+sudo pacman -Suy --noconfirm --needed \
 	xorg-server xorg-xinit xorg-xsetroot xorg-xbacklight xorg-xprop rsync \
 	noto-fonts noto-fonts-emoji ttf-jetbrains-mono ttf-dejavu ttf-joypixels ttf-font-awesome \
 	#noto-fonts-cjk font-manager \
@@ -51,7 +51,7 @@ cd
 
 yay -S --noconfirm --needed picom-jonaburg-git pulsemixer
 
-sudo pacman -Syu --noconfirm --needed libxft-bgra nerd-fonts-jetbrains-mono
+sudo pacman -Syu --noconfirm --needed nerd-fonts-jetbrains-mono
 
 # /etc
 sudo cp -r ~/home-dir/etc/* /etc
