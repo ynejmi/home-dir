@@ -19,8 +19,8 @@ mkdir ~/.local
 mkdir ~/.config
 
 mkdir -p /mnt/hdd
-sudo sh -c 'echo "#/dev/sda2" >> /etc/fstab'
-sudo sh -c 'echo "UUID=6CBEAA21BEA9E3B4                           /mnt/hdd        ntfs           rw      0 2" >> /etc/fstab'
+#sudo sh -c 'echo "#/dev/sda2" >> /etc/fstab'
+#sudo sh -c 'echo "UUID=6CBEAA21BEA9E3B4                           /mnt/hdd        ntfs           rw      0 2" >> /etc/fstab'
 
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -28,7 +28,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo pacman -S --noconfirm --needed \
 	xorg-server xorg-xinit xorg-xsetroot xorg-xbacklight xorg-xprop \
 	noto-fonts noto-fonts-emoji ttf-jetbrains-mono ttf-dejavu ttf-joypixels ttf-font-awesome \
-	noto-fonts-cjk font-manager \
+	#noto-fonts-cjk font-manager \
 	ranger sxiv xwallpaper python-pywal unclutter xclip maim npm \
 	zsh zsh-syntax-highlighting zsh-autosuggestions fzf \
 	xdotool man-db brightnessctl sxhkd htop polkit lxsession\
@@ -37,7 +37,7 @@ sudo pacman -S --noconfirm --needed \
 
 sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 
-sudo pacman -Syu --needed --noconfirm firefox code thunar qbittorrent
+#sudo pacman -Syu --needed --noconfirm firefox code thunar qbittorrent
 
 # Chaotic aur
 sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
@@ -58,20 +58,17 @@ sudo cp -r ~/home-dir/etc/* /etc
 sudo rm -Rf /etc/X11/xorg.conf.d
 sudo mv /etc/xorg.conf.d /etc/X11
 
-# .local 
-sudo rm -Rf ~/.local
-mkdir ~/.local
-cp -r ~/home-dir/.local/* ~/.local/
+# .local - .config
 
-# .config
-sudo rm -Rf ~/.config
-mkdir ~/.config
-cp -r ~/home-dir/.config/* ~/.config/
+cd $HOME
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/ynejmi/dotfiles.git tmpdotfiles
+rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
+rm -r tmpdotfiles
 
 # suckless
 sudo make clean install -C ~/.local/src/suckless/st
 sudo make clean install -C ~/.local/src/suckless/dwm
-sudo make clean install -C ~/.local/src/suckless/dwmblocks
+sudo make clean install -C ~/.local/src/suckless/dwmblocks-async
 sudo make clean install -C ~/.local/src/suckless/dmenu
 sudo make clean install -C ~/.local/src/suckless/pinentry-dmenu
 
