@@ -28,7 +28,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo pacman -S --noconfirm --needed \
 	xorg-server xorg-xinput xorg-xinit xorg-xsetroot xorg-xbacklight xorg-xprop rsync \
 	noto-fonts noto-fonts-emoji ttf-jetbrains-mono ttf-dejavu ttf-joypixels ttf-font-awesome \
-	#noto-fonts-cjk font-manager \
+  noto-fonts-cjk font-manager \
 	ranger sxiv xwallpaper python-pywal unclutter xclip maim npm \
 	zsh zsh-syntax-highlighting zsh-autosuggestions fzf \
 	xdotool man-db brightnessctl sxhkd htop polkit lxsession\
