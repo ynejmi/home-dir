@@ -26,7 +26,7 @@ sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo pacman -S --noconfirm --needed \
-	xorg-server xorg-xinit xorg-xsetroot xorg-xbacklight xorg-xprop \
+	xorg-server xorg-xinit xorg-xsetroot xorg-xbacklight xorg-xprop rsync \
 	noto-fonts noto-fonts-emoji ttf-jetbrains-mono ttf-dejavu ttf-joypixels ttf-font-awesome \
 	#noto-fonts-cjk font-manager \
 	ranger sxiv xwallpaper python-pywal unclutter xclip maim npm \
