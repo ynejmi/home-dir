@@ -1,1 +1,0 @@
-[ "$(systemctl is-active whoogle)" = "active" ] && printf '🔍✅' || printf '🔍❌'
