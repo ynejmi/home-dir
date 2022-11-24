@@ -12,6 +12,11 @@
 
 #sudo nmcli d wifi connect SSID5G hidden yes password 21280941 || exit
 
+# /etc
+sudo cp -r ~/home-dir/etc/* /etc
+sudo rm -Rf /etc/X11/xorg.conf.d
+sudo mv /etc/xorg.conf.d /etc/X11
+
 # Making sure deps exist
 sudo pacman -Syu --needed --noconfirm zsh git curl base-devel sed
 sudo rm -Rf ~/.local ~/.config
@@ -53,14 +58,10 @@ yay -S --noconfirm --needed picom-jonaburg-git pulsemixer
 
 sudo pacman -Syu --noconfirm --needed libxft-bgra nerd-fonts-jetbrains-mono
 
-# /etc
-sudo cp -r ~/home-dir/etc/* /etc
-sudo rm -Rf /etc/X11/xorg.conf.d
-sudo mv /etc/xorg.conf.d /etc/X11
-
 # .local - .config
 
 cd $HOME
+mkdir -p $HOME/.cache/xinit/
 git clone --separate-git-dir=$HOME/.dotfiles https://github.com/ynejmi/dotfiles.git tmpdotfiles
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
