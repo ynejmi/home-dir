@@ -1,10 +1,10 @@
 #!/bin/sh
 
-dwm_bar &
+#dwm_bar &
 set_wallpaper &
-# dwmblocks &
-xcompmgr &
-# picom --experimental-backends &
+dwmblocks &
+#xcompmgr &
+picom --experimental-backends &
 # dunst &
 xset r rate 300 50 &
 #sxhkd &

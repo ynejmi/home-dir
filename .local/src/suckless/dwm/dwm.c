@@ -1061,9 +1061,7 @@ void
 incnmaster(const Arg *arg)
 {
 
-	fprintf(stderr, "arg->i: %i\n", arg->i);
 	selmon->nmaster = MAX(selmon->nmaster + arg->i, 0);
-	fprintf(stderr, "selmon->nmaster: %i\n", selmon->nmaster);
 	arrange(selmon);
 }
 
@@ -1658,6 +1656,8 @@ void
 setmfact(const Arg *arg)
 {
 	float f;
+
+	fprintf(stderr, "arg->i: %i\n", arg->i);
 
 	if (!arg || !selmon->lt[selmon->sellt]->arrange)
 		return;

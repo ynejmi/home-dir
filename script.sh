@@ -18,26 +18,26 @@ sudo rm -Rf ~/.local ~/.config
 mkdir ~/.local
 mkdir ~/.config
 
-# sudo sh -c 'echo "#/dev/sda2" >> /etc/fstab'
-# sudo sh -c 'echo "UUID=6CBEAA21BEA9E3B4                           /mnt/hdd        ntfs           rw      0 2" >> /etc/fstab'
+mkdir -p /mnt/hdd
+sudo sh -c 'echo "#/dev/sda2" >> /etc/fstab'
+sudo sh -c 'echo "UUID=6CBEAA21BEA9E3B4                           /mnt/hdd        ntfs           rw      0 2" >> /etc/fstab'
 
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo pacman -S --noconfirm --needed \
 	xorg-server xorg-xinit xorg-xsetroot xorg-xbacklight xorg-xprop \
-	noto-fonts noto-fonts-emoji ttf-jetbrains-mono ttf-joypixels ttf-font-awesome \
-	# noto-fonts-cjk \ #ch/jp characters for 200mb
+	noto-fonts noto-fonts-emoji ttf-jetbrains-mono ttf-dejavu ttf-joypixels ttf-font-awesome \
+	noto-fonts-cjk font-manager \
 	ranger sxiv xwallpaper python-pywal unclutter xclip maim npm \
-	zsh zsh-syntax-highlighting zsh-autosuggestions \
-	xdotool man-db brightnessctl sxhkd htop polkit \
-	ntfs-3g rsync jq libconfig \
-	# bluez bluez-utils \
+	zsh zsh-syntax-highlighting zsh-autosuggestions fzf \
+	xdotool man-db brightnessctl sxhkd htop polkit lxsession\
+	ntfs-3g rsync jq libconfig cowsay openssh dunst \
 	arc-gtk-theme lxappearance qt5ct 
 
 sudo sh -c 'echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 
-# sudo pacman -Syu --needed --noconfirm firefox code thunar qbittorrent
+sudo pacman -Syu --needed --noconfirm firefox code thunar qbittorrent
 
 # Chaotic aur
 sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
@@ -49,9 +49,9 @@ git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si --noconfirm --needed
 cd
 
-yay -S --noconfirm --needed picom-jonaburg-git ncpamixer
+yay -S --noconfirm --needed picom-jonaburg-git pulsemixer
 
-sudo pacman -Syu --noconfirm --needed libxft-bgra 
+sudo pacman -Syu --noconfirm --needed libxft-bgra nerd-fonts-jetbrains-mono
 
 # /etc
 sudo cp -r ~/home-dir/etc/* /etc

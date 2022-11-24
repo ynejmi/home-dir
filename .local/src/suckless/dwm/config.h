@@ -74,10 +74,10 @@ static const char *pbwsrcmd[]  = { "firefox", "--private-window", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +1} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.01} },
 	{ ALTKEY|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
 	{ ALTKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -1} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.01} },
 	{ MODKEY,                       XK_g,      togglebar,      {0} },
 	{ MODKEY,                       XK_f,	   zoom,           {0} },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
