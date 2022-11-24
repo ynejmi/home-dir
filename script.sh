@@ -67,7 +67,7 @@ rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
 
 # suckless
-sudo make clean install -C ~/.local/src/suckless/st
+sudo make clean install -C ~/.local/src/suckless/st || exit 1
 sudo make clean install -C ~/.local/src/suckless/dwm
 sudo make clean install -C ~/.local/src/suckless/dwmblocks-async
 sudo make clean install -C ~/.local/src/suckless/dmenu
